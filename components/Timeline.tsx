@@ -24,7 +24,7 @@ export default function Timeline() {
         viewport={{ once: true, amount: 0.6 }}
         className="mb-20 text-center font-display text-3xl text-inkBrown sm:text-4xl"
       >
-        Bốn Năm Thanh Xuân Đáng Nhớ
+        Ba Năm Thanh Xuân Đáng Nhớ
       </motion.h2>
 
       <div className="relative mx-auto max-w-3xl">
