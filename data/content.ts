@@ -6,7 +6,6 @@
 export const siteConfig = {
   name: "Nguyễn Thị Thủy",
   initials: "NTT",
-  avatar: "/assets/images/avatar.jpg",
   eventTitle: "Lễ Tốt Nghiệp",
   graduationDateISO: "2026-08-18T08:00:00+07:00",
   graduationDateDisplay: "18 . 08 . 2026",
