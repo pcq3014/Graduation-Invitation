@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Playfair Display", "Cormorant Garamond", serif;
+  --font-body: "Be Vietnam Pro", system-ui, sans-serif;
+  --font-hand: "Cormorant SC", "Dancing Script", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: #fffdf8;
+  color: #5c4b51;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #d9b26f;
+  color: #fffdf8;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fff1e6;
+}
+::-webkit-scrollbar-thumb {
+  background: #d9b26f;
+  border-radius: 999px;
+}
+
+/* ---------- Focus visibility (a11y) ---------- */
+:focus-visible {
+  outline: 2px solid #d9b26f;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Glassmorphism helper ---------- */
+.glass-panel {
+  background: rgba(255, 253, 248, 0.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-panel-dark {
+  background: rgba(92, 75, 81, 0.35);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- Text gradient (champagne sweep) ---------- */
+.text-gradient-champagne {
+  background: linear-gradient(90deg, #d9b26f, #dfa5a5, #d9b26f);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ---------- Section heading eyebrow ---------- */
+.eyebrow {
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #d9b26f;
+}
+
+/* ---------- Flip clock ---------- */
+.flip-card {
+  position: relative;
+  perspective: 400px;
+}
+
+.flip-card__face {
+  backface-visibility: hidden;
+}
+
+/* ---------- Petal / particle layers ---------- */
+.petal {
+  position: absolute;
+  top: -5vh;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.particle-light {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Aurora background layer ---------- */
+.aurora-layer {
+  position: absolute;
+  inset: -10%;
+  background: var(--tw-gradient-stops);
+  filter: blur(60px);
+}
+
+/* ---------- Handwritten letter paper texture ---------- */
+.paper-texture {
+  background-color: #fffdf8;
+  background-image:
+    radial-gradient(rgba(92, 75, 81, 0.035) 1px, transparent 1px);
+  background-size: 3px 3px;
+}

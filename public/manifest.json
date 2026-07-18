@@ -1,0 +1,21 @@
+{
+  "name": "Nguyễn Thị Thủy - Lễ Tốt Nghiệp Đại Học",
+  "short_name": "NTT Tốt Nghiệp",
+  "description": "Thiệp mời Lễ Tốt Nghiệp Đại Học của Nguyễn Thị Thủy - 18/08/2026",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFDF8",
+  "theme_color": "#FFF1E6",
+  "icons": [
+    {
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
