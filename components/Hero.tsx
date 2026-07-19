@@ -4,14 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { useMousePosition } from "@/hooks/useMousePosition";
-import { useAppState } from "@/hooks/useAppState";
 import { heroContent } from "@/data/content";
 import { staggerContainer, letterFade, fadeUp } from "@/animations/variants";
 
 export default function Hero() {
   const { x, y } = useMousePosition();
-  const { openCard, isCardOpened } = useAppState();
-
   const nameLetters = heroContent.title.split("");
 
   return (
@@ -19,7 +16,7 @@ export default function Hero() {
       id="hero"
       className="relative flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-hidden px-6 py-24"
     >
-      {/* Glow behind portrait - Added fade-in/scale-up animation for softer load */}
+      {/* Glow behind portrait */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -33,7 +30,7 @@ export default function Hero() {
         className="pointer-events-none absolute left-1/2 top-1/2 h-[65vh] w-[65vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-terracottaRose/10 blur-[110px] will-change-transform"
       />
 
-      {/* Corner ornaments - Keeping as is, they look elegant */}
+      {/* Corner ornaments */}
       <svg
         aria-hidden
         className="pointer-events-none absolute left-6 top-6 h-16 w-16 text-champagne/50 sm:left-10 sm:top-10"
@@ -66,14 +63,12 @@ export default function Hero() {
       <div className="relative z-10 mb-8">
         <motion.div
           aria-hidden
-          // Thêm will-change-transform và tăng độ dày border để nổi bật hơn
           className="pointer-events-none absolute -inset-5 rounded-[3.5rem] border-[1.5px] border-dashed border-champagne/60 sm:-inset-6 will-change-transform"
           animate={{ rotate: 360 }}
           transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
         />
         
         <motion.div
-          // Sử dụng thuộc tính chuẩn của Framer Motion thay vì string nội suy
           style={{
             rotateY: x * 6,
             rotateX: -y * 6,
@@ -135,18 +130,7 @@ export default function Hero() {
         {heroContent.date}
       </motion.p>
 
-      {!isCardOpened && (
-        <motion.button
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 0.95 }}
-          onClick={openCard}
-          className="btn-shimmer relative z-10 mt-10 rounded-full bg-gradient-to-r from-champagne to-terracottaRose px-10 py-4 font-display text-base tracking-widest text-ivory shadow-soft transition-transform hover:scale-105 active:scale-95"
-        >
-          {heroContent.cta}
-        </motion.button>
-      )}
+      {/* Đã xóa khối <motion.button> "Mở Thiệp" ở đây */}
 
       {/* Scroll indicator */}
       <motion.div
