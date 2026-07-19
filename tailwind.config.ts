@@ -54,6 +54,27 @@ const config: Config = {
           "0%, 100%": { transform: "translate3d(0,0,0) scale(1)" },
           "50%": { transform: "translate3d(2%, -3%, 0) scale(1.08)" },
         },
+        cloudDrift: {
+          "0%": { transform: "translateX(-20vw)" },
+          "100%": { transform: "translateX(120vw)" },
+        },
+        heartRise: {
+          "0%": { transform: "translateY(8vh) translateX(0) rotate(-6deg) scale(0.7)", opacity: "0" },
+          "12%": { opacity: "0.85" },
+          "50%": { transform: "translateY(-45vh) translateX(14px) rotate(6deg) scale(1)" },
+          "88%": { opacity: "0.7" },
+          "100%": { transform: "translateY(-105vh) translateX(-10px) rotate(-4deg) scale(0.9)", opacity: "0" },
+        },
+        capFloat: {
+          "0%, 100%": { transform: "translateY(0px) rotate(-6deg)" },
+          "50%": { transform: "translateY(-20px) rotate(6deg)" },
+        },
+        capThrow: {
+          "0%": { transform: "translateY(20vh) rotate(0deg) scale(0.6)", opacity: "0" },
+          "10%": { opacity: "1" },
+          "55%": { transform: "translateY(-55vh) rotate(280deg) scale(1)" },
+          "100%": { transform: "translateY(-15vh) rotate(520deg) scale(0.9)", opacity: "0" },
+        },
       },
       animation: {
         floatY: "floatY 6s ease-in-out infinite",
@@ -61,6 +82,10 @@ const config: Config = {
         shimmer: "shimmer 2.5s linear infinite",
         petalFall: "petalFall linear infinite",
         auroraShift: "auroraShift 18s ease-in-out infinite",
+        cloudDrift: "cloudDrift linear infinite",
+        heartRise: "heartRise ease-in infinite",
+        capFloat: "capFloat ease-in-out infinite",
+        capThrow: "capThrow cubic-bezier(0.22, 1, 0.36, 1) forwards",
       },
       boxShadow: {
         soft: "0 20px 60px -20px rgba(92,75,81,0.25)",

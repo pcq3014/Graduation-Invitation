@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { navSections, siteConfig } from "@/data/content";
+import { navSections } from "@/data/content";
 import { useAppState } from "@/hooks/useAppState";
+import Monogram from "@/components/Monogram";
 
 export default function Navbar() {
   const { isCardOpened } = useAppState();
@@ -36,11 +37,8 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <button
-          onClick={() => handleNavClick("hero")}
-          className="font-display text-lg tracking-widest text-inkBrown"
-        >
-          {siteConfig.initials}
+        <button onClick={() => handleNavClick("hero")} aria-label="Về đầu trang">
+          <Monogram size="sm" />
         </button>
 
         <ul className="hidden gap-8 text-sm text-inkBrown/80 sm:flex">

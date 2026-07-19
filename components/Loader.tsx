@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAppState } from "@/hooks/useAppState";
-import { siteConfig } from "@/data/content";
+import Monogram from "@/components/Monogram";
 
 export default function Loader() {
   const { isLoading, finishLoading } = useAppState();
@@ -42,9 +42,9 @@ export default function Loader() {
             transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
           }}
         >
-          {/* Radiating light */}
+          {/* Radiating light - Thêm will-change-transform để báo trình duyệt tối ưu */}
           <motion.div
-            className="absolute h-[60vh] w-[60vh] rounded-full bg-gradient-to-br from-champagne/30 via-terracottaRose/20 to-jade/20 blur-3xl"
+            className="pointer-events-none absolute h-[60vh] w-[60vh] rounded-full bg-gradient-to-br from-champagne/30 via-terracottaRose/20 to-jade/20 blur-3xl will-change-transform"
             animate={{ scale: [1, 1.25, 1], opacity: [0.5, 0.9, 0.5] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -55,18 +55,15 @@ export default function Loader() {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex flex-col items-center gap-6"
           >
-            <div className="flex h-24 w-24 items-center justify-center rounded-full border border-champagne/40 glass-panel shadow-glass">
-              <span className="font-display text-3xl tracking-widest text-inkBrown">
-                {siteConfig.initials}
-              </span>
-            </div>
+            <Monogram size="md" />
 
             <p className="eyebrow text-inkBrown/70">Đang chuẩn bị thiệp mời</p>
 
             <div className="relative h-[2px] w-56 overflow-hidden rounded-full bg-inkBrown/10">
               <motion.div
-                className="h-full bg-gradient-to-r from-champagne via-terracottaRose to-jade"
-                style={{ width: `${progress}%` }}
+                className="h-full w-full origin-left bg-gradient-to-r from-champagne via-terracottaRose to-jade will-change-transform"
+                // Dùng scaleX thay cho width để tối ưu hiệu năng tuyệt đối
+                style={{ scaleX: progress / 100 }}
               />
             </div>
 

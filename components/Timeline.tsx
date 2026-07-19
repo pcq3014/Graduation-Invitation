@@ -3,29 +3,13 @@
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 import { timelineItems } from "@/data/content";
-import { fadeUp, slideFromLeft, slideFromRight } from "@/animations/variants";
+import { slideFromLeft, slideFromRight } from "@/animations/variants";
+import SectionHeading from "./SectionHeading";
 
 export default function Timeline() {
   return (
     <section id="timeline" className="relative px-6 py-28">
-      <motion.p
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.6 }}
-        className="eyebrow mb-3 text-center"
-      >
-        Hành trình
-      </motion.p>
-      <motion.h2
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.6 }}
-        className="mb-20 text-center font-display text-3xl text-inkBrown sm:text-4xl"
-      >
-        Ba Năm Thanh Xuân Đáng Nhớ
-      </motion.h2>
+      <SectionHeading eyebrow="Hành trình" title="Ba Năm Thanh Xuân Đáng Nhớ" />
 
       <div className="relative mx-auto max-w-3xl">
         {/* Center vertical line */}
@@ -42,7 +26,7 @@ export default function Timeline() {
               >
                 {/* Node */}
                 <div className="absolute left-4 top-1 z-10 -translate-x-1/2 sm:left-1/2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-ivory shadow-glass ring-2 ring-champagne">
+                  <div className="glow-ring flex h-8 w-8 items-center justify-center rounded-full bg-ivory shadow-glass ring-2 ring-champagne">
                     <GraduationCap size={14} className="text-champagne" />
                   </div>
                 </div>

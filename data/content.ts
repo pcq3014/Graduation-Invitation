@@ -16,7 +16,7 @@ export const siteConfig = {
   },
   siteUrl: "https://ntt-graduation.vercel.app",
   description:
-    "Trân trọng kính mời bạn đến chung vui cùng Nguyễn Thị Thủy trong Lễ Tốt Nghiệp Cao Đẳng - một hành trình thanh xuân đầy nắng, đầy hoa và đầy những điều đáng nhớ.",
+    "Trân trọng kính mời bạn đến chung vui cùng Nguyễn Thị Thủy trong Lễ Tốt Nghiệp - một hành trình thanh xuân đầy nắng, đầy hoa và đầy những điều đáng nhớ.",
 };
 
 export const heroContent = {
@@ -82,22 +82,23 @@ export type GalleryImage = {
   id: string;
   src: string;
   alt: string;
+  position?: string;
 };
 
 export const galleryImages: GalleryImage[] = [
-  { id: "g1", src: "/assets/images/gallery-01.jpg", alt: "" },
-  { id: "g2", src: "/assets/images/gallery-02.jpg", alt: "" },
-  { id: "g3", src: "/assets/images/gallery-03.jpg", alt: "" },
-  { id: "g4", src: "/assets/images/gallery-04.jpg", alt: "" },
-  { id: "g5", src: "/assets/images/gallery-05.jpg", alt: "" },
-  { id: "g6", src: "/assets/images/gallery-06.jpg", alt: "" },
+  { id: "g1", src: "/assets/images/gallery-01.jpg", alt: "", position: "top" },
+  { id: "g2", src: "/assets/images/gallery-02.jpg", alt: "", position: "center 70%" },
+  { id: "g3", src: "/assets/images/gallery-03.jpg", alt: "", position: "bottom" },
+  { id: "g4", src: "/assets/images/gallery-04.jpg", alt: "", position: "center 20%" },
+  { id: "g5", src: "/assets/images/gallery-05.jpg", alt: "", position: "bottom" },
+  { id: "g6", src: "/assets/images/gallery-06.jpg", alt: "", position: "bottom" },
 ];
 
 export const letterContent = {
   title: "Lời Tri Ân",
   paragraphs: [
     "Gửi những người đã luôn ở bên con trong suốt hành trình vừa qua,",
-    "Ba năm cao đẳng đi qua như một cuốn nhật ký đầy nắng, có những ngày mệt nhoài vì bài vở, có những đêm thức trắng vì thực tập, nhưng cũng có biết bao khoảnh khắc rực rỡ bên bạn bè, thầy cô.",
+    "Ba năm đi qua như một cuốn nhật ký đầy nắng, có những ngày mệt nhoài vì bài vở, có những đêm thức trắng vì thực tập, nhưng cũng có biết bao khoảnh khắc rực rỡ bên bạn bè, thầy cô.",
     "Con xin gửi lời cảm ơn chân thành đến gia đình đã luôn tin tưởng và ủng hộ con trên từng chặng đường. Cảm ơn thầy cô đã tận tâm truyền dạy tri thức. Cảm ơn những người bạn đã cùng con đi qua thanh xuân rực rỡ này.",
     "Hôm nay, khi khoác lên mình bộ lễ phục tốt nghiệp, con biết đây không phải là điểm kết thúc, mà là khởi đầu của một hành trình mới - một hành trình mang theo tất cả yêu thương và bài học quý giá từ những năm tháng đã qua.",
     "Rất mong được đón tiếp mọi người trong ngày trọng đại này.",
